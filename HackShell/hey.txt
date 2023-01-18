@@ -1,0 +1,28 @@
+from tkinter import *
+
+# function
+x = True
+def greet():
+	global x
+	if x:
+		lbl.config(text="Goodbye World", bg="salmon")
+		btn.config(text="Hi", bg="steelblue")
+		x = False
+	else:
+		lbl.config(text="Hello World", bg="steelblue")
+		btn.config(text="Bye", bg="salmon")
+		x = True
+
+
+root = Tk()
+
+lbl = Label(root,text="Hello World", font= "lucida 30 bold", bg="steelblue", fg="white")
+lbl.pack(fill=X, side=TOP, ipady=10)
+
+btn = Button(root, text="Bye", bg="salmon", width=30, command=greet, font="lucida 20 bold")
+btn.pack(pady=20)
+
+root.resizable(False, False)
+root.geometry("500x300")
+root.title("Greetings")
+root.mainloop()
